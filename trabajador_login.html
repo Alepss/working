@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WORKING - Acceso trabajador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <span class="logo-main">WORKING</span>
+        <span class="logo-sub">Acceso para trabajadores</span>
+    </div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Área clientes</a>
+    </nav>
+</header>
+
+<section class="section">
+    <div class="login-container">
+        <h2>Iniciar sesión como trabajador</h2>
+        <p class="login-subtitle">
+            Simulación del acceso a la membresía de trabajador.
+        </p>
+
+        <form id="loginTrabajadorForm">
+            <label for="emailTrab">Correo electrónico</label>
+            <input type="email" id="emailTrab" required placeholder="trabajador@working.com">
+
+            <label for="passwordTrab">Contraseña</label>
+            <input type="password" id="passwordTrab" required placeholder="654321">
+
+            <button type="submit" class="btn" style="width:100%; margin-top:10px;">
+                Ingresar
+            </button>
+
+            <p id="errorTrab" class="error-message"></p>
+        </form>
+
+    </div>
+</section>
+
+<script>
+    const TRAB_EMAIL = "trabajador@working.com";
+    const TRAB_PASSWORD = "654321";
+
+    const formTrab = document.getElementById("loginTrabajadorForm");
+    const errorTrab = document.getElementById("errorTrab");
+
+    formTrab.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const email = document.getElementById("emailTrab").value.trim();
+        const password = document.getElementById("passwordTrab").value.trim();
+
+        if (email === TRAB_EMAIL && password === TRAB_PASSWORD) {
+            window.location.href = "panel_trabajador.html";
+        } else {
+            errorTrab.textContent = "Correo o contraseña incorrectos (simulación).";
+        }
+    });
+</script>
+</body>
+</html>

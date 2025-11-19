@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WORKING - Panel del trabajador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <span class="logo-main">WORKING</span>
+        <span class="logo-sub">Panel del trabajador</span>
+    </div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="trabajador_login.html">Cerrar sesión</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h2>Mi perfil como trabajador</h2>
+    <p style="text-align:center;">
+        Desde este panel puedes configurar tu perfil y simular la subida de tus trabajos
+        para que los clientes te encuentren en WORKING.
+    </p>
+
+    <div class="dashboard-grid">
+        <!-- DATOS DEL PERFIL -->
+<div class="dashboard-card">
+    <h3>Datos del perfil</h3>
+    <form id="perfilForm" class="perfil-form">
+        <div class="field-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej. María López">
+        </div>
+
+        <div class="field-group">
+            <label for="tipo">Tipo de trabajador</label>
+            <select id="tipo">
+                <option value="">Selecciona una opción</option>
+                <option value="Limpieza del hogar">Limpieza del hogar</option>
+                <option value="Niñera / cuidado infantil">Niñera / cuidado infantil</option>
+                <option value="Cuidado de adultos mayores">Cuidado de adultos mayores</option>
+                <option value="Plomería">Plomería</option>
+                <option value="Electricidad">Electricidad</option>
+                <option value="Carpintería">Carpintería</option>
+                <option value="Estilista / Maquillista">Estilista / Maquillista</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+
+        <div class="field-group">
+            <label for="zona">Zona donde trabajas</label>
+            <input type="text" id="zona" placeholder="Ej. Guadalajara Centro, Zapopan, etc.">
+        </div>
+
+        <div class="field-group field-full">
+            <label for="descripcion">Descripción de tu trabajo</label>
+            <textarea id="descripcion" rows="3"
+                placeholder="Escribe una breve descripción de tu experiencia, años trabajando, etc."></textarea>
+        </div>
+
+        <button type="button" class="btn btn-full perfil-btn" onclick="guardarPerfil()">
+            Guardar perfil
+        </button>
+    </form>
+</div>
+
+        <!-- SUBIDA DE TRABAJOS -->
+        <div class="dashboard-card">
+            <h3>Mis trabajos realizados</h3>
+            <p>
+                Aquí puedes simular que subes fotos de tus trabajos (limpiezas, reparaciones, peinados, etc.).
+                Los archivos no se guardan en servidor, solo se muestran en la lista de abajo para la demostración.
+            </p>
+            <input type="file" id="archivos" multiple>
+            <ul id="listaArchivos"></ul>
+        </div>
+    </div>
+
+    <div class="preview-card">
+        <h3>Vista previa de cómo te verán los clientes</h3>
+        <p><strong>Nombre:</strong> <span id="prevNombre">Nombre del trabajador</span></p>
+        <p><strong>Servicio:</strong> <span id="prevServicio">Tipo de servicio</span></p>
+        <p><strong>Zona:</strong> <span id="prevZona">Zona de trabajo</span></p>
+        <p><strong>Descripción:</strong> <span id="prevDescripcion">Descripción breve de tu experiencia...</span></p>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+    <p>WORKING &copy; 2025</p>
+    <p>Panel de trabajador simulado para proyecto escolar.</p>
+</footer>
+
+<script>
+function guardarPerfil() {
+    const nombre = document.getElementById('nombre').value || "Nombre del trabajador";
+    const tipo = document.getElementById('tipo').value || "Tipo de servicio";
+    const zona = document.getElementById('zona').value || "Zona de trabajo";
+    const descripcion = document.getElementById('descripcion').value || "Descripción breve de tu experiencia...";
+
+    document.getElementById('prevNombre').textContent = nombre;
+    document.getElementById('prevServicio').textContent = tipo;
+    document.getElementById('prevZona').textContent = zona;
+    document.getElementById('prevDescripcion').textContent = descripcion;
+
+    alert("Datos guardados (simulado, solo para la demostración).");
+}
+
+document.getElementById('archivos').addEventListener('change', function() {
+    const lista = document.getElementById('listaArchivos');
+    lista.innerHTML = '';
+    for (const file of this.files) {
+        const li = document.createElement('li');
+        li.textContent = file.name;
+        lista.appendChild(li);
+    }
+});
+</script>
+</body>
+</html>

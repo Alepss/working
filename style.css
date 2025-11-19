@@ -1,0 +1,728 @@
+/* --------- RESETEO BÁSICO --------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/* --------- HEADER --------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17, 24, 39, 0.97);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    backdrop-filter: blur(8px);
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(1.5);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-main {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: #d1d5db;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+nav a:hover {
+    background: rgba(249, 250, 251, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Botones destacados en el header */
+.nav-btn {
+    background: #fbbf24;
+    color: #111827;
+    font-weight: 600;
+    padding: 7px 16px;
+}
+
+.nav-btn:hover {
+    background: #f59e0b;
+    color: #111827;
+}
+
+.nav-btn-outline {
+    border: 1px solid #fbbf24;
+    background: transparent;
+    color: #fbbf24;
+}
+
+.nav-btn-outline:hover {
+    background: #fbbf24;
+    color: #111827;
+}
+
+/* --------- HERO --------- */
+.hero {
+    background: radial-gradient(circle at top left, #1d4ed8 0, #111827 55%);
+    color: #f9fafb;
+    padding: 90px 20px 80px;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 40px;
+    align-items: center;
+    animation: fadeUp 0.7s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    max-width: 550px;
+    margin-bottom: 20px;
+    color: #e5e7eb;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fbbf24;
+    color: #111827;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.btn:hover {
+    background-color: #f59e0b;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fbbf24;
+    border: 1px solid #fbbf24;
+}
+
+.btn-secondary:hover {
+    background: #fbbf24;
+    color: #111827;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 380px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+    object-fit: cover;
+}
+
+/* --------- SECCIONES GENERALES --------- */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.section h2 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #111827;
+}
+
+.section p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #4b5563;
+}
+
+.section-alt {
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* --------- GRID Y TARJETAS --------- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Tarjetitas para “Cómo funciona” y “Servicios” */
+.grid-2 > div {
+    background: #ffffff;
+    padding: 18px 18px 16px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.grid-2 > div h3 {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    color: #111827;
+}
+
+.grid-2 > div p {
+    text-align: left;
+}
+
+.grid-2 > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* Listas */
+.list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.list li {
+    margin-bottom: 6px;
+    color: #4b5563;
+}
+
+/* Bloques tipo “tarjeta de info” */
+.stats, .note, .preview-card, .dashboard-card {
+    margin-top: 20px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background-color: #e0ecff;
+    border: 1px solid #bfdbfe;
+}
+
+/* --------- LOGIN --------- */
+.login-container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 28px 24px;
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    color: #6b7280;
+}
+
+.login-container form label {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.login-container input,
+.login-container select,
+.login-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+}
+
+.login-container input:focus,
+.login-container select:focus,
+.login-container textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px #2563eb33;
+}
+
+.error-message {
+    color: #b91c1c;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-hint {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* --------- PANEL TRABAJADOR / PREVIEW --------- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.preview-card p {
+    margin-bottom: 6px;
+}
+
+/* --------- TRABAJADORES (ÁREA CLIENTES) --------- */
+.workers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.worker-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    text-align: left;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.worker-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    object-fit: cover;
+}
+
+.worker-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+    color: #111827;
+}
+
+.worker-card p {
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.worker-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+/* --------- FOOTER --------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111827;
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* --------- ANIMACIONES --------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------- RESPONSIVO GENERAL --------- */
+@media (max-width: 900px) {
+    header {
+        padding: 10px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 40px 16px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Icono en títulos de sección */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-icon {
+    font-size: 1.9rem;
+}
+
+/* Iconos redondos dentro de las tarjetas */
+.card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1d4ed8;
+}
+
+/* GRID DE TARJETAS CON IMAGEN */
+.servicios-grid-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.servicio-card-img {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.servicio-card-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.servicio-card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servicio-content {
+    padding: 18px;
+}
+
+.servicio-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+/* ---- SECCIÓN SEGURIDAD ---- */
+.seguridad-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.seguridad-texto p {
+    text-align: left !important;
+    max-width: 550px;
+}
+
+.seguridad-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.seguridad-card {
+    background: #ffffff;
+    padding: 18px 16px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    transition: 0.25s ease;
+}
+
+.seguridad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+.seguridad-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.seguridad-imagen img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .seguridad-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seguridad-imagen {
+        text-align: center;
+    }
+
+    .seguridad-imagen img {
+        max-width: 420px;
+    }
+}
+
+/* GRID PARA LA SECCIÓN DE MEMBRESÍA CON VIDEO */
+.membresia-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.membresia-video {
+    display: flex;
+    justify-content: center;
+}
+
+.video-box {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+@media (max-width: 900px) {
+    .membresia-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .membresia-video {
+        margin-top: 20px;
+    }
+
+    .video-box {
+        max-width: 90%;
+    }
+}
+
+/* ---- TARJETA DE MEMBRESÍA MODERNA ---- */
+.membresia-card {
+    background: #e0ecff !important;
+    border-radius: 20px !important;
+    padding: 25px 30px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #c3d7ff;
+}
+
+.membresia-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #1f2937;
+}
+
+.membresia-costo {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #374151;
+}
+
+.membresia-beneficios {
+    list-style: none;
+    padding-left: 0;
+}
+
+.membresia-beneficios li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.membresia-beneficios li::before {
+    content: "";
+    margin-right: 6px;
+}
+
+.membresia-card strong {
+    color: #1d4ed8;
+}
+
+@media (max-width: 700px) {
+    .membresia-card {
+        padding: 20px;
+    }
+    .membresia-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ---- FORMULARIO PERFIL TRABAJADOR ---- */
+.perfil-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 20px;
+    margin-top: 10px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.field-group label {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px #2563eb33;
+}
+
+/* Descripción ocupa todo el ancho */
+.field-full {
+    grid-column: 1 / -1;
+}
+
+/* Botón al ancho completo y separado */
+.perfil-btn {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+}
+
+/* Ajuste visual de la tarjeta */
+.dashboard-card h3 {
+    margin-bottom: 4px;
+}
+
+/* Responsivo: una sola columna en pantallas chicas */
+@media (max-width: 700px) {
+    .perfil-form {
+        grid-template-columns: 1fr;
+    }
+}
